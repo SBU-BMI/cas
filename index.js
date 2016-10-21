@@ -32,7 +32,7 @@ console.log('jonas.js loaded');
         li1.innerHTML='Aha, we got your ticket: <spam style="color:red">'+cas.ticket+'</spam>! Note we are back to the original untrustworthy url. If you reload or copy the page URL to a new tab you\'ll be able to confirm that we still hold the ticket.'
         stepList.appendChild(li1)
         var li2 = document.createElement('li')
-        li2.innerHTML='So I could now use it to <a style="background-color:yellow" href="https://sso.cc.stonybrook.edu/cas/login?ticket='+cas.ticket+'" target="_blank">log into SBU services</a> <span style="font-size:10;color:orange"> <i class="fa fa-arrow-left" aria-hidden="true"></i> click to open in new page</span>. Note how closing that page will not stop us from holding the ticket (reload or open this URL in another tab to check).' 
+        li2.innerHTML='So I could now use it to <a style="background-color:yellow" href="https://sso.cc.stonybrook.edu/cas/login?ticket='+cas.ticket+'" target="_blank">log into SBU services</a> <span style="font-size:10;color:orange"> <i class="fa fa-arrow-left" aria-hidden="true"></i> click to open in new page</span>. Note how closing that page will not stop us from holding the ticket (reload or open this URL in another tab to check). Don\'t worry, in this application we are holding the ticket within the browser (localStorage), nothing was transmited outside the browser, as you can confirm by checking network trafic.' 
         li2.style.color='red'
         stepList.appendChild(li2)
         var li3 = document.createElement('li')
