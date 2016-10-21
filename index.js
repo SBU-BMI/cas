@@ -22,14 +22,14 @@ console.log('jonas.js loaded');
     var srcUrl = location.origin+location.pathname // root
     var li1 = document.createElement('li')
     if(!cas.ticket){
-        li1.innerHTML='No CAS ticket found, let\'s get one by clicking on <a href="https://sso.cc.stonybrook.edu/cas/login?service='+srcUrl+'">https://sso.cc.stonybrook.edu/cas/login?service='+srcUrl+'</a> <span style="font-size:10;color:orange"> <i class="fa fa-arrow-left" aria-hidden="true"></i> click to start</span>.'
+        li1.innerHTML='No CAS ticket found, this is clean start. Now let\'s imagine that under the cover we can go somewhere you trust, get an access ticket generated for you (potentially asking for you username and password if you are not logged in already) and then come back to this page, unstopped by the fact that this page is not registered as particularly trustworthy. We\'ll do that slowly here so you see each step of the process. Start by clicking on <a href="https://sso.cc.stonybrook.edu/cas/login?service='+srcUrl+'">https://sso.cc.stonybrook.edu/cas/login?service='+srcUrl+'</a> <span style="font-size:10;color:orange"> <i class="fa fa-arrow-left" aria-hidden="true"></i> click to start</span>.'
         stepList.appendChild(li1)
     }else{
         if(location.search.length>0){
             localStorage.setItem('cas',JSON.stringify(cas))
             location.href=srcUrl
         }
-        li1.innerHTML='Got your ticket: <spam style="color:red">'+cas.ticket+'</spam>, note how the url of this page did not change (reload, or copy URL to another tab to confirm).'
+        li1.innerHTML='Aha, we got your ticket: <spam style="color:red">'+cas.ticket+'</spam>! Note we are back to the original untrustworthy url. If you reload or copy the page URL to a new tab you\'ll be able to confirm that we still hold the ticket.'
         stepList.appendChild(li1)
         var li2 = document.createElement('li')
         li2.innerHTML='So I could now use it to <a href="https://sso.cc.stonybrook.edu/cas/login?ticket='+cas.ticket+'" target="_blank">log into SBU services</a> <span style="font-size:10;color:orange"> <i class="fa fa-arrow-left" aria-hidden="true"></i> click to open in new page</span>.' 
