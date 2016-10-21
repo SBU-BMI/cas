@@ -37,8 +37,8 @@ console.log('jonas.js loaded');
         stepList.appendChild(li2)
         var li3 = document.createElement('li')
         li3.innerHTML='This application is not an inditement of CAS authentication, which is doing exactly what it was designed to do. Instead, it is an illustration of the rationale for more secure authentication/authorization systems like <a href="https://oauth.net/2/" target="_blank">OAUTH2</a> where applications are given a public id matched with registered redirect URIs for that specific client application.' 
+        li3.style.color='green'
         stepList.appendChild(li3)
-
     }
     
     localStorage.setItem('cas',JSON.stringify(cas))
