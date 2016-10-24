@@ -1,6 +1,8 @@
 console.log('jonas.js loaded');
 (function() {
     var h = '<h3 style="color:maroon">Testing CAS authentication at Stony Brook <a href="https://github.com/sbu-bmi/cas" target="_blank"><i id="gitIcon" class="fa fa-github-alt" aria-hidden="true" style="color:navy"></i></a> <i id="offIcon" class="fa fa-power-off" aria-hidden="true" style="color:red" onclick="localStorage.clear();location.href=location.origin+location.pathname"></i><span style="font-size:10;color:orange"> <i class="fa fa-arrow-left" aria-hidden="true"></i> click to reset</span></h3>'
+    h += '<p><a href="https://github.com/jonasalmeida" target="_blank"> Jonas Almeida</a>, October 2016. </p>'
+    h += '<hr>'
     h += '<ol id="stepList" style="color:navy"></ol>'
     appSpace.innerHTML = h
     // harvest parms from url
